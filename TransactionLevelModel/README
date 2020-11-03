@@ -1,0 +1,42 @@
+How To Build
+============
+
+1. Setup
+--------
+Open build.sh and check if the path to the SystemC installation is valid.
+I have installed SystemC in /opt/systemc - If your path is different, just change the path in the SYSTEMC variables in build.sh accordingly.
+
+I also use the LLVM C++ Compler clang++. When you want to use the GCC C++ compiler, just replace clang++ by g++.
+The compiler must support C++14 standard.
+You may want to enable compiler optimization by changing the CPPFLAGS parameters in build.sh
+
+2. Compile
+----------
+Just execute the build.sh script.
+It compiles all cpp-files in this directroy and sub directories.
+Then the object files get linked to a binary called model.
+
+The following dependencies exist:
+  - SystemC
+  - GNU Scientific Library
+  - TinyXML2
+
+
+3. Execution
+------------
+
+Save simulated iteration delays
+
+./model -e jpeg7 > results.txt   # save results in a text file
+
+
+Execute 
+./model --help
+for more parameters.
+
+To execute multiple instances in parallel use the batchrun.sh script.
+There are two variables that may be edited:
+
+  Instances: Number of simulation instances that run in parallel. Best number is the amount of Cores on your host CPU
+  Experiment: Name of the experiment that shall be executed.
+

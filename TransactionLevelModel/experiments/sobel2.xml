@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- tile and memory tags not necessary -->
+
+<experiment platform="PlatformV2" application="sobel2">
+    <mapping>
+        <actors>
+            <tile name="MB1" feature="ea">
+                <actor>GetPixel2</actor>
+                <actor>GY2</actor>
+            </tile>
+            <tile name="MB2" feature="ea">
+                <actor>GX2</actor>
+                <actor>ABS2</actor>
+            </tile>
+        </actors>
+        <channels>
+            <memory name="SharedMemory">
+                <channel>ch_pos</channel>
+                <channel>ch_gx2</channel>
+                <channel>ch_gy2</channel>
+                <channel>ch_xa2</channel>
+                <channel>ch_ya2</channel>
+            </memory>
+        </channels>
+    </mapping>
+</experiment>
